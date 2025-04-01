@@ -1,3 +1,5 @@
+import timeit
+
 def mergeSort(arr):
     if len(arr) <= 1:
         return arr
@@ -33,6 +35,22 @@ def merge(left, right):
 
     return result
 
+# Casos de prueba
 unsortedArr = [3, 7, 6, -10, 15, 23.5, 55, -13]
-sortedArr = mergeSort(unsortedArr)
-print("Sorted array:", sortedArr)
+orderedArr = [-13, -10, 3, 6, 7, 15, 23.5, 55]
+reversedArr = [55, 23.5, 15, 7, 6, 3, -10, -13]
+
+# Medir el tiempo de ejecución para cada caso utilizando timeit
+print("Medición de tiempo de ejecución:")
+
+# Caso 1: Lista aleatoria
+time_unsorted = timeit.timeit(lambda: mergeSort(unsortedArr), number=1)
+print(f"Tiempo para lista aleatoria: {time_unsorted:.6f} segundos")
+
+# Caso 2: Lista ordenada
+time_ordered = timeit.timeit(lambda: mergeSort(orderedArr), number=1)
+print(f"Tiempo para lista ordenada: {time_ordered:.6f} segundos")
+
+# Caso 3: Lista invertida
+time_reversed = timeit.timeit(lambda: mergeSort(reversedArr), number=1)
+print(f"Tiempo para lista invertida: {time_reversed:.6f} segundos")
