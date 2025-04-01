@@ -9,12 +9,15 @@ def bogo_sort(lista):
         return True
 
     # Se repite hasta que la lista esté ordenada
+    intentos = 0  # Contador para los intentos
     while not esta_ordenada(lista):
         random.shuffle(lista)  # Reordena aleatoriamente la lista
+        intentos += 1
+        print(f"Intento {intentos}: {lista}")  # Muestra cada intento
     
     return lista  # Devuelve la lista ya ordenada
 
-# Usamos un nombre distinto a 'list' para evitar confusión
-mi_lista = [5, 3, 8, 6, 1, 7]
+# Lista con 8 elementos
+mi_lista = [5, 3, 8, 6, 1, 7, 2, 4]
 
-print(bogo_sort(mi_lista))
+print("Resultado final:", bogo_sort(mi_lista))
