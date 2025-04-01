@@ -1,6 +1,10 @@
 import random
 import timeit
 
+'''
+En el caso de intentar ordenarlo probando con todas las diferentes formas posibles de ordenarla seria n! en este caso 8!=40320. 
+Por lo tanto en el Bogo Sort se puede llegar incluso a tener mas intentos que listas posbibles, es decir, que se pueden repetir listas
+'''
 def bogo_sort(lista):
     # Función para verificar si la lista está ordenada
     def esta_ordenada(lista):
