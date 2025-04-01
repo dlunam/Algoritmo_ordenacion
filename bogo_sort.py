@@ -1,4 +1,5 @@
 import random
+import timeit
 
 def bogo_sort(lista):
     # Función para verificar si la lista está ordenada
@@ -17,7 +18,13 @@ def bogo_sort(lista):
     
     return lista  # Devuelve la lista ya ordenada
 
-# Lista con 8 elementos
-mi_lista = [5, 3, 8, 6, 1, 7, 2, 4]
+# Función para medir el tiempo de ejecución de bogo_sort
+def medir_tiempo():
+    mi_lista = [5, 3, 8, 6, 1, 7, 2, 4]  # Lista con 8 elementos
+    bogo_sort(mi_lista)
 
-print("Resultado final:", bogo_sort(mi_lista))
+# Medir el tiempo de ejecución usando timeit
+tiempo = timeit.timeit('medir_tiempo()', globals=globals(), number=1)
+
+print(f"\nTiempo de ejecución del BogoSort: {tiempo} segundos")
+
